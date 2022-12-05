@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlogUI", "XBlogUI\XBlogUI.csproj", "{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlog.Api", "XBlog.Api\XBlog.Api.csproj", "{90050F5C-8197-4561-8A43-BE0A855EF6AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90050F5C-8197-4561-8A43-BE0A855EF6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90050F5C-8197-4561-8A43-BE0A855EF6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90050F5C-8197-4561-8A43-BE0A855EF6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90050F5C-8197-4561-8A43-BE0A855EF6AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
