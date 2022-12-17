@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "1SRReLWDgkWvdBhYtf8S/4tRfEtnBmAksyI4KFU45g75AbQsmT6HR+91Rf+RLiuMdLPcI0uSjAhf/omorc5RGw==",
+  "dgSpecHash": "I+Le2eVt8HZfD9HQzobKu4LYSr3/0nlo9AThKSwtExk1w8tmoAgm+E6mudV9KPaNXZ0xlWBpn2XmYA7ukAHjCQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Models\\XBlog.Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.1\\microsoft.aspnetcore.cryptography.internal.7.0.1.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.1\\microsoft.aspnetcore.cryptography.keyderivation.7.0.1.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.1\\microsoft.extensions.identity.core.7.0.1.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.identity.stores\\7.0.1\\microsoft.extensions.identity.stores.7.0.1.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
