@@ -8,7 +8,7 @@ namespace XBlog.Models.Entities
 {
     public class Coment:BaseEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Body { get; set; }
         public Guid ActicleId { get; set; }
         public virtual Article Article { get; set; }

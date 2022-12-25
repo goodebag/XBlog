@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static Transcript_Processor.Models.Models.EnumsClass;
+using XBlog.Models.Models;
 
 namespace XBlog.Models.Entities
 {

@@ -7,13 +7,13 @@ using XBlog.Models.Models;
 
 namespace XBlog.Models.Entities
 {
-    public class Authur:BaseEntity
+    public class Order:BaseEntity
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string UserName { get; set; }
-        public Rating Rating { get; set; }
+        public Guid? PaymentId { get; set; }
+        public OrderStatus  OrderStatus { get; set; }
         public string UserId { get; set; }
-        public virtual ICollection<Article> Articles { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
+   
 }

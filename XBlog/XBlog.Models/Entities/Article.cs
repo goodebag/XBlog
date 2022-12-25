@@ -14,5 +14,7 @@ namespace XBlog.Models.Entities
         public string HeadlineImageUrl { get; set; }
         public Guid AuthurId { get; set; }
         public virtual Authur  Authur { get; set; }
+        public virtual ICollection<Coment> Coments { get; set; }
+        public virtual ICollection<Reaction> Reactions { get; set; }
     }
 }
