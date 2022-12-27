@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Xblog.Data\Xblog.Data.csproj" />
+    <ProjectReference Include="..\XBlog.Models\XBlog.Models.csproj" />
+  </ItemGroup>
+
 </Project>

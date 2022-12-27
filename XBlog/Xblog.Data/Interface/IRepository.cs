@@ -68,7 +68,26 @@ namespace Xblog.Data.Interface
         bool Any(Expression<Func<T, bool>> predicate = null);
 
         IQueryable<T> GetQueryable(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, int? skip = null, int? take = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+      IEnumerable<T> GetList(
+    Expression<Func<T, bool>> predicate = null,
+    Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+    Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
 
+    bool disableTracking = true);
+
+        Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> predicate,
+                                          Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                          int? skip = null,
+                                          int? take = null,
+                                          Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+                                          bool disableTracking = true);
+
+        IQueryable<T> GetQueryableList(
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+
+            bool disableTracking = true);
         T GetSingleBy(Expression<Func<T, bool>> predicate);
 
         Task<T> GetSingleByAsync(Expression<Func<T, bool>> predicate);

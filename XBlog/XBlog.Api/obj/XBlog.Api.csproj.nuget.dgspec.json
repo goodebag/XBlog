@@ -101,7 +101,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Models\\XBlog.Models.csproj": {
+                "projectPath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Models\\XBlog.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -235,7 +239,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\Xblog.Data\\Xblog.Data.csproj": {
+                "projectPath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\Xblog.Data\\Xblog.Data.csproj"
+              },
+              "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Models\\XBlog.Models.csproj": {
+                "projectPath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Models\\XBlog.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -247,6 +258,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

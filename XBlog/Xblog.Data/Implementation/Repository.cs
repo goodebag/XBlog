@@ -428,7 +428,37 @@ namespace Xblog.Data.Implementation
             return query;
         }
 
+        public async Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, int? skip, int? take, Func<IQueryable<T>, IIncludableQueryable<T, object>> include, bool disableTracking)
+        {
+            IQueryable<T> query = constructQuery(predicate, orderBy, skip, take, include, disableTracking);
+            return await query.ToListAsync();
+        }
+        public IEnumerable<T> GetList(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, Func<IQueryable<T>, IIncludableQueryable<T, object>> include, bool disableTracking)
+        {
+            IQueryable<T> query = _dbSet;
+            if (disableTracking) query = query.AsNoTracking();
 
+            if (include != null) query = include(query);
+
+            if (predicate != null) query = query.Where(predicate);
+
+            return orderBy != null
+                ? orderBy(query).ToList()
+                : query.ToList();
+        }
+        public IQueryable<T> GetQueryableList(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, Func<IQueryable<T>, IIncludableQueryable<T, object>> include, bool disableTracking)
+        {
+            IQueryable<T> query = _dbSet;
+            if (disableTracking) query = query.AsNoTracking();
+
+            if (include != null) query = include(query);
+
+            if (predicate != null) query = query.Where(predicate);
+
+            return orderBy != null
+                ? orderBy(query)
+                : query;
+        }
         private IQueryable<T> constructQuery(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, int? skip, int? take, params string[] includeProperties)
         {
             IQueryable<T> query = _dbSet;
@@ -460,7 +490,36 @@ namespace Xblog.Data.Implementation
 
             return query;
         }
+        private IQueryable<T> constructQuery(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, int? skip, int? take, Func<IQueryable<T>, IIncludableQueryable<T, object>> include, bool disableTracking)
+        {
+            IQueryable<T> query = _dbSet;
 
+            if (disableTracking) query = query.AsNoTracking();
+
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+
+            if (orderBy != null)
+            {
+                query = orderBy(query);
+            }
+
+            if (include != null) query = include(query);
+
+            if (skip != null)
+            {
+                query = query.Skip(skip.Value);
+            }
+
+            if (take != null)
+            {
+                query = query.Take(take.Value);
+            }
+
+            return query;
+        }
         /// <summary>
         /// Gets all object of type <paramref name="T"/> in repository.
         /// </summary>

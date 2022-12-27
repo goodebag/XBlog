@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "m9Y1EiKz87fNQ0d3HezlRD24KsqXmRQUar5EqEkv3uu1d7l9+tNweuxB94NtBK3v9/9wxNdZjRy6CvPkwaIYFA==",
+  "dgSpecHash": "aHrZFEenRcI6+fL3rSztv2IRfX+uBQi+6Nk7Yfk64t/T4mAL/j6ACIiz1HAyF1S5XmBZP/2UAOR8opNHbnQc1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\Xblog.Data\\Xblog.Data.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.1\\microsoft.extensions.identity.core.7.0.1.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.identity.stores\\7.0.1\\microsoft.extensions.identity.stores.7.0.1.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",

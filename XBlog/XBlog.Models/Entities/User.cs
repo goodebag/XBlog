@@ -20,6 +20,8 @@ namespace XBlog.Models.Entities
         public int CountryId { get; set; }
         public int? StateId { get; set; }
         public int? CityId { get; set; }
-
+        public string? Organisation { get; set; }
+        public string? OrganisationId { get; set; }
+        public string? OrganisationRole { get; set; }
     }
 }

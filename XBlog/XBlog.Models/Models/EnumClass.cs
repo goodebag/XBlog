@@ -17,6 +17,12 @@ namespace XBlog.Models.Models
         Four,
         Five,
     }
+    public enum Gender
+    {
+        Male = 1,
+        Female
+    }
+
     public enum Role
     {
         User = 1,
