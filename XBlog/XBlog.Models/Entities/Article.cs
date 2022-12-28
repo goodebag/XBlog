@@ -13,7 +13,7 @@ namespace XBlog.Models.Entities
         public string Body { get; set; }
         public string HeadlineImageUrl { get; set; }
         public Guid AuthurId { get; set; }
-        public Guid ProductId { get; set; }
+        public Guid? ProductId { get; set; }
         public Guid CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public virtual Authur  Authur { get; set; }
