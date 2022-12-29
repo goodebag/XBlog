@@ -120,5 +120,140 @@ namespace XBlog.Services.Implementations
             Guid authurId = _UnitOfWork.GetRepository<Authur>().GetSingleBy(x=>x.UserId==identityUserId).Id;
             return authurId;
         }
+        public async Task<Coment> AddCommentsAsync(CommentModel model, string userId)
+        {
+            var time = DateTime.UtcNow;
+            var articles = await _UnitOfWork.GetRepository<Coment>().AddAsync(new Coment
+            {
+                UserId = userId,
+                Body = model.Body,
+                ActicleId = model.ActicleId,
+                CreatedAt = time,
+                UpdatedAt = time,
+            });
+            return articles;
+        }
+        public async Task<Reaction> AddOrModifyReationAsync(ReationModel model, string userId)
+        {
+            var reation = await _UnitOfWork.GetRepository<Reaction>().GetSingleByAsync(x => x.ActicleId == model.ActicleId && x.UserId == userId, disableTracking: false);
+            var time = DateTime.UtcNow;
+            if (reation is null)
+            {
+                reation = await _UnitOfWork.GetRepository<Reaction>().AddAsync(new Reaction
+                {
+                    UserId = userId,
+                    ReactionType = model.ReactionType,
+                    ActicleId = model.ActicleId,
+                    CreatedAt = time,
+                    UpdatedAt = time,
+                });
+            }
+            else
+            {
+                reation.ReactionType = model.ReactionType;
+                reation.UpdatedAt = time;
+                await _UnitOfWork.SaveChangesAsync();
+            }
+
+            return reation;
+        }
+        public async Task<Product> ModifyProductAsync(ProductEditModel model, string userId)
+        {
+            var product = await _UnitOfWork.GetRepository<Product>().GetSingleByAsync(x => x.Id == model.ProductId, disableTracking: false);
+            var time = DateTime.UtcNow;
+            if (product is not null)
+            {
+
+                if (model.IsEnable.HasValue)
+                {
+                    product.IsActive = model.IsEnable.Value;
+                }
+                if (model.Price.HasValue)
+                {
+                    product.Price = model.Price.Value;
+                }
+                if (!string.IsNullOrWhiteSpace(model.Name))
+                {
+                    product.Name = model.Name;
+                }
+                if (!string.IsNullOrWhiteSpace(model.Description))
+                {
+                    product.Discription = model.Description;
+                }
+                product.UpdatedAt = time;
+                await _UnitOfWork.SaveChangesAsync();
+            }
+
+            return product;
+        }
+        public async Task<Order> OrderProductAsync(IEnumerable<Guid> products, string userId)
+        {
+            DateTime time = DateTime.UtcNow;
+            Order order = new Order()
+            {
+                UserId = userId,
+                OrderStatus = OrderStatus.AwaitingPayment,
+                CreatedAt = time,
+                UpdatedAt = time
+            };
+            order = await _UnitOfWork.GetRepository<Order>().AddAsync(order);
+            foreach (var productId in products)
+            {
+              await  _UnitOfWork.GetRepository<OrderDetail>().AddAsync(
+                  new OrderDetail
+                  {
+                      OrderId=order.Id,
+                      ProductId= productId,
+                      CreatedAt=time,
+                      UpdatedAt=time
+                  });
+            }
+            await _UnitOfWork.SaveChangesAsync();
+
+            return order;
+        }
+        public async Task<bool> DeleteOrderAsync(Guid orderId)
+        {
+            DateTime time = DateTime.UtcNow;
+           var isDeleted =  _UnitOfWork.GetRepository<Order>().Delete(x=>x.Id ==orderId);
+            if (isDeleted)
+            {
+                _UnitOfWork.GetRepository<OrderDetail>().DeleteRange(x=>x.OrderId == orderId);
+            }
+            await _UnitOfWork.SaveChangesAsync();
+            return isDeleted;
+        }
+        public async Task<bool> RemoveProductFromOrderAsync(Guid orderId, Guid productId)
+        {
+             var isDeleted = _UnitOfWork.GetRepository<OrderDetail>().Delete(x => x.OrderId == orderId && x.Id== productId);
+            await _UnitOfWork.SaveChangesAsync();
+            return isDeleted;
+        }
+        public async Task<bool> TrackArticle(Guid articleId)
+        {
+            DateTime time = DateTime.UtcNow;
+            var article = _UnitOfWork.GetRepository<Article>().GetSingleBy(x => x.Id == articleId);
+            var tracker =  await _UnitOfWork.GetRepository<ViewTracker>().GetSingleByAsync(x => x.ArticleId == articleId,disableTracking: false);
+            if (tracker ==null)
+            {
+                tracker = _UnitOfWork.GetRepository<ViewTracker>().Add(new ViewTracker
+                {
+                    ArticleId = articleId,
+                    ViewSetlementCount = 0,
+                    ViewCount  =+1,
+                    AuthurId = article.AuthurId,
+                    CreatedAt = time,
+                    UpdatedAt = time,
+                });
+            }
+            else
+            {
+                tracker.ViewCount=+1;
+                tracker.UpdatedAt = time;
+            }
+            await _UnitOfWork.SaveChangesAsync();
+            return true;
+
+        }
     }
 }

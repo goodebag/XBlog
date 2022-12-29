@@ -65,4 +65,11 @@ namespace XBlog.Models.Models
         Shipped,
         Delivered,
     }
+    public  enum ProductType
+    {
+        Ematerial = 1,
+        Appreciation,
+        RealMaterial
+
+    }
 }

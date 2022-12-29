@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using XBlog.Models.Entities;
+using XBlog.Models.Models;
+using IdentityRole = Microsoft.AspNetCore.Identity.IdentityRole;
 
 namespace Xblog.Data.Implementation
 {

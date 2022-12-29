@@ -13,6 +13,7 @@ namespace XBlog.Models.Entities
         public Guid? PaymentId { get; set; }
         public OrderStatus  OrderStatus { get; set; }
         public string UserId { get; set; }
+        public virtual Payment Payment { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
    

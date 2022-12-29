@@ -16,6 +16,7 @@ namespace XBlog.Models.Entities
         public string ImageUrlTwo { get; set; }
         public string ImageUrlThree { get; set; }
         public string Discription { get; set; }
+        public ProductType ProductType { get; set; }
         public Guid ActicleId { get; set; }
         public Guid SellerId { get; set; }
         public Rating ProductRating { get; set; }

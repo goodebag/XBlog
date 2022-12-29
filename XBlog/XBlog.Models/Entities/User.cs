@@ -23,5 +23,7 @@ namespace XBlog.Models.Entities
         public string? Organisation { get; set; }
         public string? OrganisationId { get; set; }
         public string? OrganisationRole { get; set; }
+        public string? ImageUrl { get; set; }
+        public string? OrganisationImageUrl { get; set; }
     }
 }

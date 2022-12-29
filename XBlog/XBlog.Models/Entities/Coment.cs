@@ -11,6 +11,7 @@ namespace XBlog.Models.Entities
         public Guid Id { get; set; }
         public string Body { get; set; }
         public Guid ActicleId { get; set; }
-        public virtual Article Article { get; set; }
+        public virtual User User { get; set; }
+        public string UserId { get; set; }
     }
 }

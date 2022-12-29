@@ -1,0 +1,12 @@
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\bin\Debug\net6.0\XBlog.Models.deps.json
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\bin\Debug\net6.0\XBlog.Models.dll
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\bin\Debug\net6.0\XBlog.Models.pdb
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.csproj.AssemblyReference.cache
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.AssemblyInfoInputs.cache
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.AssemblyInfo.cs
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.csproj.CoreCompileInputs.cache
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.dll
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\refint\XBlog.Models.dll
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\XBlog.Models.pdb
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlog.Models\obj\Debug\net6.0\ref\XBlog.Models.dll

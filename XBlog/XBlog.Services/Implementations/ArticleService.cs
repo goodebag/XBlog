@@ -58,25 +58,34 @@ namespace XBlog.Services.Implementations
                 }
                 return article;
         }
+
+        public async Task<Article> UpdateArticleAsync(Article model)
+        {
+            DateTime time = DateTime.UtcNow;
+            model.UpdatedAt = time;
+            await _UnitOfWork.GetRepository<Article>().UpdateAsync(model);
+            return model;
+        }
         public async Task<Article> GetArticleByIdAsync(Guid articleId)
         {
-            var article = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Id == articleId, include: x => x.Include(y => y.Coments).Include(y => y.Reactions).Include(x => x.Product)).FirstOrDefault();
+            var article = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Id == articleId, include: x => x.Include(x => x.Product).Include(y => y.Coments).ThenInclude(x => x.User).Include(y => y.Reactions).ThenInclude(x => x.User)).FirstOrDefault();
             return article;
         }
         public async Task<IEnumerable<Article>> GetArticlesByCategoryAsync(Guid categoryId)
         {
-            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.CategoryId == categoryId, include: x => x.Include(y => y.Coments).Include(y => y.Reactions).Include(x => x.Product)).ToList();
+            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.CategoryId == categoryId, include: x => x.Include(x => x.Product).Include(y => y.Coments).ThenInclude(x => x.User).Include(y => y.Reactions).ThenInclude(x => x.User)).ToList();
             return articles;
         }
         public async Task<IEnumerable<Article>> GetArticlesByAuthurAsync(string authur)
         {
-            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Authur.Name == authur, include: x => x.Include(y => y.Coments).Include(y => y.Reactions).Include(x => x.Product)).ToList();
+            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Authur.Name == authur, include: x => x.Include(x => x.Product).Include(y => y.Coments).ThenInclude(x => x.User).Include(y => y.Reactions).ThenInclude(x => x.User)).ToList();
             return articles;
         }
         public async Task<IEnumerable<Article>> GetArticlesByHeadlineAsync(string headline)
         {
-            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Headline.Contains(headline), include: x => x.Include(y => y.Coments).Include(y => y.Reactions).Include(x => x.Product)).ToList();
+            var articles = _UnitOfWork.GetRepository<Article>().GetQueryableList(x => x.Headline.Contains(headline), include: x => x.Include(x => x.Product).Include(y => y.Coments).ThenInclude(x=>x.User).Include(y => y.Reactions).ThenInclude(x => x.User)).ToList();
             return articles;
         }
+        
     }
 }
