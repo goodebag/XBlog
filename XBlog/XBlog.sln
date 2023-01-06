@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlogUI", "XBlogUI\XBlogUI.csproj", "{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBlogUI", "XBlogUI\XBlogUI.csproj", "{78C2AA44-7911-408D-A234-A4A2C2C8CCAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlog.Api", "XBlog.Api\XBlog.Api.csproj", "{90050F5C-8197-4561-8A43-BE0A855EF6AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBlog.Api", "XBlog.Api\XBlog.Api.csproj", "{90050F5C-8197-4561-8A43-BE0A855EF6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xblog.Data", "Xblog.Data\Xblog.Data.csproj", "{523A92DA-5BB6-404E-96C8-FD055A4A8090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xblog.Data", "Xblog.Data\Xblog.Data.csproj", "{523A92DA-5BB6-404E-96C8-FD055A4A8090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlog.Models", "XBlog.Models\XBlog.Models.csproj", "{7680205B-5BC8-48EF-90AE-1FC02EBCC770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBlog.Models", "XBlog.Models\XBlog.Models.csproj", "{7680205B-5BC8-48EF-90AE-1FC02EBCC770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBlog.Services", "XBlog.Services\XBlog.Services.csproj", "{CD05DD33-D199-41EB-A440-7B13F50DF9EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBlog.Services", "XBlog.Services\XBlog.Services.csproj", "{CD05DD33-D199-41EB-A440-7B13F50DF9EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

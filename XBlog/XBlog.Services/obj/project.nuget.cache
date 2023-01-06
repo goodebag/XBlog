@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CPDoJYNv2GD5WRCTt1WUwLLtCY6UHmanLeJXeY02u2NDEElTN/qcU3KmBgP5Sk3CatYnECw8zi1A+UcDr9uFAA==",
+  "dgSpecHash": "3CulP90nmR9K2khySWwTtKS5Kls70VCNHzSMJeYiy7t/UWQO9AfT3C4QPd6olHHvqAo3oKu6EkFFLWutXNeyHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Goodebag\\source\\repos\\GecSoft\\XBlog\\XBlog\\XBlog.Services\\XBlog.Services.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.2.0\\microsoft.aspnetcore.identity.2.2.0.nupkg.sha512",
+    "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Goodebag\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",

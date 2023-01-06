@@ -23,8 +23,6 @@ namespace XBlog.Api.Controllers
             var result = await _dataService.SignInAsync(model);
             return Ok(result);
         }
-
-        // GET api/<AuthController>/5
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpModel model)
         {

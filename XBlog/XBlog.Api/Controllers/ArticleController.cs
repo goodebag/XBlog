@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using XBlog.Models.Entities;
+using XBlog.Models.Models;
 using XBlog.Services.Implementations;
 using XBlog.Services.Interfaces;
 
@@ -6,7 +9,7 @@ using XBlog.Services.Interfaces;
 
 namespace XBlog.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ArticleController : ControllerBase
     {
@@ -18,36 +21,72 @@ namespace XBlog.Api.Controllers
             _dataService = dataService;
             _articleService = articleService;
         }
-        // GET: api/<ArticleController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> GetById(Guid id)
         {
-            return new string[] { "value1", "value2" };
+          var article = await _articleService.GetArticleByIdAsync(id);
+          await  _dataService.TrackArticle(id);
+          return Ok(article);
         }
-
-        // GET api/<ArticleController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public async Task<IActionResult> GetCategories()
         {
-            return "value";
+            return Ok(await _dataService.GetCategoriesAsync());
         }
-
-        // POST api/<ArticleController>
+        [HttpGet]
+        public async Task<IActionResult> GetByCategoryId(Guid categoryId)
+        {
+            var articles = await _articleService.GetArticlesByCategoryAsync(categoryId);
+            return Ok(articles);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetByHeadline(string headline)
+        {
+            var articles = await _articleService.GetArticlesByHeadlineAsync(headline);
+            return Ok(articles);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetByAuthur(string authur)
+        {
+            var articles = await _articleService.GetArticlesByAuthurAsync(authur);
+            return Ok(articles);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetByAuthurId(Guid authurId)
+        {
+            var articles = await _articleService.GetAllArticleAsync(authurId);
+            return Ok(articles);
+        }
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Authorize]
+        public async Task<IActionResult> Update([FromBody] Article model)
         {
+            var articles = await _articleService.UpdateArticleAsync(model);
+            return Ok(articles);
         }
-
-        // PUT api/<ArticleController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Create([FromBody] ArticleCreationModel model)
         {
+           var authurId = await  _dataService.GetAuthurId(User);
+            var articles = await _articleService.CreateArticleAsync(model,authurId);
+            return Ok(articles);
         }
-
-        // DELETE api/<ArticleController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> AddOrModifyReation([FromBody] ReationModel model)
         {
+            var userId = await _dataService.GetUserId(User);
+            var articles = await _dataService.AddOrModifyReationAsync(model, userId);
+            return Ok(articles);
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> AddComent([FromBody] CommentModel model)
+        {
+            var userId = await _dataService.GetUserId(User);
+            var articles = await _dataService.AddCommentsAsync(model, userId);
+            return Ok(articles);
         }
     }
 }

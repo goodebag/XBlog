@@ -120,6 +120,12 @@ namespace XBlog.Services.Implementations
             Guid authurId = _UnitOfWork.GetRepository<Authur>().GetSingleBy(x=>x.UserId==identityUserId).Id;
             return authurId;
         }
+        public async Task<string> GetUserId(ClaimsPrincipal User)
+        {
+            string identityUserId = _userManager.GetUserId(User);
+          
+            return identityUserId;
+        }
         public async Task<Coment> AddCommentsAsync(CommentModel model, string userId)
         {
             var time = DateTime.UtcNow;
@@ -228,6 +234,28 @@ namespace XBlog.Services.Implementations
              var isDeleted = _UnitOfWork.GetRepository<OrderDetail>().Delete(x => x.OrderId == orderId && x.Id== productId);
             await _UnitOfWork.SaveChangesAsync();
             return isDeleted;
+        }
+        public async Task<bool> AddProductToOrderAsync(Guid orderId, Guid productId)
+        {
+            var result = await _UnitOfWork.GetRepository<OrderDetail>().GetSingleByAsync(x => x.OrderId == orderId && x.Id == productId);
+            if (result is null)
+            {
+                DateTime time = DateTime.UtcNow;
+                await _UnitOfWork.GetRepository<OrderDetail>().AddAsync(
+                 new OrderDetail
+                 {
+                     OrderId = orderId,
+                     ProductId = productId,
+                     CreatedAt = time,
+                     UpdatedAt = time
+                 });
+            }
+            else
+            {
+                throw new Exception("Product already added to Cart");
+            }
+            await _UnitOfWork.SaveChangesAsync();
+            return true;
         }
         public async Task<bool> TrackArticle(Guid articleId)
         {
