@@ -16,7 +16,6 @@ C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\XBlo
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\XBlogUI.RazorAssemblyInfo.cs
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\scopedcss\bundle\XBlogUI.styles.css
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\scopedcss\projectbundle\XBlogUI.bundle.scp.css
@@ -25,3 +24,4 @@ C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\refi
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\XBlogUI.pdb
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\XBlogUI.genruntimeconfig.cache
 C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\ref\XBlogUI.dll
+C:\Users\Goodebag\source\repos\GecSoft\XBlog\XBlog\XBlogUI\obj\Debug\net6.0\scopedcss\Shared\MainiLayout.razor.rz.scp.css
